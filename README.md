@@ -1,2 +1,2 @@
-gulp build - сборка проекта
+gulp build - сборка проекта,
 gulp start - запуск проекта
