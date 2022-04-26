@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Мир Кино">
+    <title>Мир Кино</title>
+    <link href="css/min.css" rel="stylesheet">
+    <link rel="preload" href="fonts/OpenSans-Light.woff" as="font" type="font/woff" crossorigin="">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__logo">
+            <a title="Логотип нашей компании" href="#">
+                <img src="img/icon-logo.svg" width="150" height="100" alt="Логотип нашей компании">
+            </a>
+        </div>
+        <nav class="header__nav">
+            <ul>
+                <li><button class="header__nav-button header__nav-button--horror" type="button">Ужасы</button></li>
+                <li><button class="header__nav-button header__nav-button--comedy" type="button">Комедия</button></li>
+                <li><button class="header__nav-button header__nav-button--action" type="button">Экшн</button></li>
+                <li><button class="header__nav-button header__nav-button--documentary" type="button">Документальные</button></li>
+            </ul>
+        </nav>
+        <button class="header__nav-tab" type="button" title="Открыть/Закрыть меню"></button>
+    </header>
+    <main class="main">
+        <h1>Каталог фильмов</h1>
+        <button class="main__reset" type="button" title="Сбросить фильтр по жанру">Категория фильмов</button>
+        <section class="main__catalog">
+            <div class="main__catalog-category main__catalog-category--horror main__catalog-category--visible">
+                <ul>
+                    <li class="choice choice--visible">
+                        <div class="choice__slide">
+                            <h2>Молчание ягнят</h2>
+                            <picture>
+                                <!-- 1х: 130px; 2x: 260px -->
+                                <source type="image/webp" media="(max-width: 767px)" srcset="img/molchanie-yagnyat-mob.webp">
+                                <!-- 1х: 324px; 2x: 648px -->
+                                <source media="(max-width: 1023px)" srcset="img/molchanie-yagnyat-tab.webp">
+                                <!-- 1х: 270px; 2x: 540px -->
+                                <img src="img/molchanie-yagnyat-dt.jpeg" width="350" height="450" alt="Молчание ягнят">
+                            </picture>
+                            <span class="choice__year">1990</span>
+                            <span class="choice__country">США</span>
+                            <span class="choice__genre">триллер, детектив, криминал, драма, ужасы</span>
+                            <p class="choice__description">Интеллектуал-людоед помогает молодой сотруднице ФБР. Веха в
+                                жанре триллера — и гениальная игра Энтони Хопкинса</p>
+                        </div>
+                        <div class="choice__slide">
+                            <h2>Сонная Лощина</h2>
+                            <picture>
+                                <!-- 1х: 130px; 2x: 260px -->
+                                <source type="image/webp" media="(max-width: 767px)" srcset="img/sonnaya-loschina-mob.webp">
+                                <!-- 1х: 324px; 2x: 648px -->
+                                <source media="(max-width: 1023px)" srcset="img/sonnaya-loschina-tab.webp">
+                                <!-- 1х: 270px; 2x: 540px -->
+                                <img src="img/sonnaya-loschina-dt.jpeg" width="350" height="450" alt="Сонная Лощина">
+                            </picture>
+                            <span class="choice__year">1999</span>
+                            <span class="choice__country">США, Германия</span>
+                            <span class="choice__genre">триллер, фэнтези, ужасы, детектив</span>
+                            <p class="choice__description">Нью-йоркский констебль ищет встречи с инфернальным убийцей.
+                                Тим Бёртон готично экранизирует Вашингтона Ирвинга</p>
+                        </div>
+                    </li>
+                    <li class="choice choice--invisible">
+                        <div class="choice__slide">
+                            <h2>Константин: Повелитель тьмы</h2>
+                            <picture>
+                                <!-- 1х: 130px; 2x: 260px -->
+                                <source type="image/webp" media="(max-width: 767px)" srcset="img/constantin-mob.webp">
+                                <!-- 1х: 324px; 2x: 648px -->
+                                <source media="(max-width: 1023px)" srcset="img/constantin-tab.webp">
+                                <!-- 1х: 270px; 2x: 540px -->
+                                <img src="img/constantin-dt.jpeg" width="350" height="450" alt="Константин: Повелитель тьмы">
+                            </picture>
+                            <span class="choice__year">2005</span>
+                            <span class="choice__country">США, Германия</span>
+                            <span class="choice__genre">фэнтези, ужасы, боевик, детектив</span>
+                            <p class="choice__description">Джону Константину удалось не только побывать в аду, но и
+                                вернуться обратно. Родившись с неугодным самому себе талантом — способностью
+                                распознавать помесь ангелов и демонов, которые бродят по земле в облике людей, —
+                                Константин под давлением обстоятельств пытается совершить самоубийство, лишь бы
+                                избавиться от мучительных видений. Но неудачно.</p>
+                        </div>
+                        <div class="choice__slide">
+                            <h2>Суини Тодд, демон-парикмахер с Флит-стрит</h2>
+                            <picture>
+                                <!-- 1х: 130px; 2x: 260px -->
+                                <source type="image/webp" media="(max-width: 767px)" srcset="img/suinny-todd-mob.webp">
+                                <!-- 1х: 324px; 2x: 648px -->
+                                <source media="(max-width: 1023px)" srcset="img/suinny-todd-tab.webp">
+                                <!-- 1х: 270px; 2x: 540px -->
+                                <img src="img/suinny-todd-dt.jpeg" width="350" height="450" alt="Суини Тодд, демон-парикмахер с Флит-стрит">
+                            </picture>
+                            <span class="choice__year">2007</span>
+                            <span class="choice__country">США, Великобритания</span>
+                            <span class="choice__genre">мюзикл, ужасы, триллер, драма</span>
+                            <p class="choice__description">Когда-то в Лондоне жил молодой и наивный брадобрей Бенджамин
+                                Баркер. Он был женат на прелестной женщине по имени Люси, которая родила ему такую же
+                                прелестную дочку. На его беду, прелесть его жены также оценил сластолюбивый судья Терпин
+                                — и отправил Бенджамина Баркера на пожизненную каторгу, чтобы без помех овладеть его
+                                женой.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="main__catalog-pages">
+                <button class="main__catalog-pages-item main__catalog-pages-item--previous main__catalog-pages-item--inactive" type="button" title="Предыдущая страница"></button>
+                <button class="main__catalog-pages-item main__catalog-pages-item--next" type="button" title="Следующая страница"></button>
+            </div>
+            <div class="main__catalog-category main__catalog-category--comedy main__catalog-category--visible">
+                <ul>
+                    <li class="choice choice--visible">
+                        <div class="choice__slide">
+                            <h2>Форрест Гамп</h2>
+                            <picture>
+                                <!-- 1х: 130px; 2x: 260px -->
+                                <source type="image/webp" media="(max-width: 767px)" srcset="img/forrest-gamp-mob.webp">
+                                <!-- 1х: 324px; 2x: 648px -->
+                                <source media="(max-width: 1023px)" srcset="img/forrest-gamp-tab.webp">
+                                <!-- 1х: 270px; 2x: 540px -->
+                                <img src="img/forrest-gamp-dt.jpeg" width="350" height="450" alt="Форрест Гамп">
+                            </picture>
+                            <span class="choice__year">1994</span>
+                            <span class="choice__country">США</span>
+                            <span class="choice__genre">драма, комедия, мелодрама, история, военный</span>
+                            <p class="choice__description">Полувековая история США глазами чудака из Алабамы. Абсолютная
+                                классика Роберта Земекиса с Томом Хэнксом</p>
+                        </div>
+                        <div class="choice__slide">
+                            <h2>1+1</h2>
+                            <picture>
+                                <!-- 1х: 130px; 2x: 260px -->
+                                <source type="image/webp" media="(max-width: 767px)" srcset="img/1+1-mob.webp">
+                                <!-- 1х: 324px; 2x: 648px -->
+                                <source media="(max-width: 1023px)" srcset="img/1+1-tab.webp">
+                                <!-- 1х: 270px; 2x: 540px -->
+                                <img src="img/1+1-dt.jpeg" width="350" height="450" alt="1+1">
+                            </picture>
+                            <span class="choice__year">2011</span>
+                            <span class="choice__country">Франция</span>
+                            <span class="choice__genre">драма, комедия, биография</span>
+                            <p class="choice__description">Пострадав в результате несчастного случая, богатый аристократ
+                                Филипп нанимает в помощники человека, который менее всего подходит для этой работы, –
+                                молодого жителя предместья Дрисса, только что освободившегося из тюрьмы.</p>
+                        </div>
+                    </li>
+                    <li class="choice choice--invisible">
+                        <div class="choice__slide">
+                            <h2>Иван Васильевич меняет профессию</h2>
+                            <picture>
+                                <!-- 1х: 130px; 2x: 260px -->
+                                <source type="image/webp" media="(max-width: 767px)" srcset="img/ivan-vasilievich-mob.webp">
+                                <!-- 1х: 324px; 2x: 648px -->
+                                <source media="(max-width: 1023px)" srcset="img/ivan-vasilievich-tab.webp">
+                                <!-- 1х: 270px; 2x: 540px -->
+                                <img src="img/ivan-vasilievich-dt.jpeg" width="350" height="450" alt="Иван Васильевич меняет профессию">
+                            </picture>
+                            <span class="choice__year">1973</span>
+                            <span class="choice__country">СССР</span>
+                            <span class="choice__genre">комедия, фантастика, приключения</span>
+                            <p class="choice__description">Иван Грозный отвечает на телефон, пока его тезка-пенсионер
+                                сидит на троне. Советский хит о липовом государе</p>
+                        </div>
+                        <div class="choice__slide">
+                            <h2>Операция «Ы» и другие приключения Шурика</h2>
+                            <picture>
+                                <!-- 1х: 130px; 2x: 260px -->
+                                <source type="image/webp" media="(max-width: 767px)" srcset="img/operaciya-y-mob.webp">
+                                <!-- 1х: 324px; 2x: 648px -->
+                                <source media="(max-width: 1023px)" srcset="img/operaciya-y-tab.webp">
+                                <!-- 1х: 270px; 2x: 540px -->
+                                <img src="img/operaciya-y-dt.jpeg" width="350" height="450" alt="Операция «Ы» и другие приключения Шурика">
+                            </picture>
+                            <span class="choice__year">1965</span>
+                            <span class="choice__country">СССР</span>
+                            <span class="choice__genre">комедия, мелодрама, криминал</span>
+                            <p class="choice__description">Похождения хронически оптимистичного очкарика. Блистательная
+                                комедия Леонида Гайдая</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="main__catalog-pages">
+                <button class="main__catalog-pages-item main__catalog-pages-item--previous main__catalog-pages-item--inactive" type="button" title="Предыдущая страница"></button>
+                <button class="main__catalog-pages-item main__catalog-pages-item--next" type="button" title="Следующая страница"></button>
+            </div>
+            <div class="main__catalog-category main__catalog-category--action main__catalog-category--visible">
+                <ul>
+                    <li class="choice choice--visible">
+                        <div class="choice__slide">
+                            <h2>Начало</h2>
+                            <picture>
+                                <!-- 1х: 130px; 2x: 260px -->
+                                <source type="image/webp" media="(max-width: 767px)" srcset="img/nachalo-mob.webp">
+                                <!-- 1х: 324px; 2x: 648px -->
+                                <source media="(max-width: 1023px)" srcset="img/nachalo-tab.webp">
+                                <!-- 1х: 270px; 2x: 540px -->
+                                <img src="img/nachalo-dt.jpeg" width="350" height="450" alt="Начало">
+                            </picture>
+                            <span class="choice__year">2010</span>
+                            <span class="choice__country">США, Великобритания</span>
+                            <span class="choice__genre">фантастика, боевик, триллер, драма, детектив</span>
+                            <p class="choice__description">Кобб – талантливый вор, лучший из лучших в опасном искусстве
+                                извлечения: он крадет ценные секреты из глубин подсознания во время сна, когда
+                                человеческий разум наиболее уязвим.</p>
+                        </div>
+                        <div class="choice__slide">
+                            <h2>Назад в будущее</h2>
+                            <picture>
+                                <!-- 1х: 130px; 2x: 260px -->
+                                <source type="image/webp" media="(max-width: 767px)" srcset="img/nazad-v-buduschee-mob.webp">
+                                <!-- 1х: 324px; 2x: 648px -->
+                                <source media="(max-width: 1023px)" srcset="img/nazad-v-buduschee-tab.webp">
+                                <!-- 1х: 270px; 2x: 540px -->
+                                <img src="img/nazad-v-buduschee-dt.jpeg" width="350" height="450" alt="Назад в будущее">
+                            </picture>
+                            <span class="choice__year">1985</span>
+                            <span class="choice__country">США</span>
+                            <span class="choice__genre">фантастика, комедия, приключения</span>
+                            <p class="choice__description">Безумный ученый и 17-летний оболтус тестируют машину времени
+                                и наводят шороху в 1950-х. Классика кинофантастики</p>
+                        </div>
+                    </li>
+                    <li class="choice choice--invisible">
+                        <div class="choice__slide">
+                            <h2>Интерстеллар</h2>
+                            <picture>
+                                <!-- 1х: 130px; 2x: 260px -->
+                                <source type="image/webp" media="(max-width: 767px)" srcset="img/interstellar-mob.webp">
+                                <!-- 1х: 324px; 2x: 648px -->
+                                <source media="(max-width: 1023px)" srcset="img/interstellar-tab.webp">
+                                <!-- 1х: 270px; 2x: 540px -->
+                                <img src="img/interstellar-dt.jpeg" width="350" height="450" alt="Интерстеллар">
+                            </picture>
+                            <span class="choice__year">2014</span>
+                            <span class="choice__country">Великобритания, Канада, США</span>
+                            <span class="choice__genre">фантастика, драма, приключения</span>
+                            <p class="choice__description">Когда засуха, пыльные бури и вымирание растений приводят
+                                человечество к продовольственному кризису, коллектив исследователей и учёных
+                                отправляется сквозь червоточину (которая предположительно соединяет области
+                                пространства-времени через большое расстояние) в путешествие, чтобы превзойти прежние
+                                ограничения для космических путешествий человека и найти планету с подходящими для
+                                человечества условиями.</p>
+                        </div>
+                        <div class="choice__slide">
+                            <h2>Матрица</h2>
+                            <picture>
+                                <!-- 1х: 130px; 2x: 260px -->
+                                <source type="image/webp" media="(max-width: 767px)" srcset="img/matriza-mob.webp">
+                                <!-- 1х: 324px; 2x: 648px -->
+                                <source media="(max-width: 1023px)" srcset="img/matriza-tab.webp">
+                                <!-- 1х: 270px; 2x: 540px -->
+                                <img src="img/matriza-dt.jpeg" width="350" height="450" alt="Матрица">
+                            </picture>
+                            <span class="choice__year">1999</span>
+                            <span class="choice__country">США, Австралия</span>
+                            <span class="choice__genre">фантастика, боевик</span>
+                            <p class="choice__description">Жизнь Томаса Андерсона разделена на две части: днём он —
+                                самый обычный офисный работник, получающий нагоняи от начальства, а ночью превращается в
+                                хакера по имени Нео, и нет места в сети, куда он бы не смог проникнуть. Но однажды всё
+                                меняется.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="main__catalog-pages">
+                <button class="main__catalog-pages-item main__catalog-pages-item--previous main__catalog-pages-item--inactive" type="button" title="Предыдущая страница"></button>
+                <button class="main__catalog-pages-item main__catalog-pages-item--next" type="button" title="Следующая страница"></button>
+            </div>
+            <div class="main__catalog-category main__catalog-category--documentary main__catalog-category--visible">
+                <ul>
+                    <li class="choice choice--visible">
+                        <div class="choice__slide">
+                            <h2>Земляне</h2>
+                            <picture>
+                                <!-- 1х: 130px; 2x: 260px -->
+                                <source type="image/webp" media="(max-width: 767px)" srcset="img/zemlyane-mob.webp">
+                                <!-- 1х: 324px; 2x: 648px -->
+                                <source media="(max-width: 1023px)" srcset="img/zemlyane-tab.webp">
+                                <!-- 1х: 270px; 2x: 540px -->
+                                <img src="img/zemlyane-dt.jpeg" width="350" height="450" alt="Земляне">
+                            </picture>
+                            <span class="choice__year">2005</span>
+                            <span class="choice__country">США</span>
+                            <span class="choice__genre">документальный</span>
+                            <p class="choice__description">Фильм посвящён проблеме жестокого обращения человека с
+                                животными, а также вопросам вреда животноводства и рыболовства в глобальных масштабах.
+                            </p>
+                        </div>
+                        <div class="choice__slide">
+                            <h2>Ханс Циммер: Live on Tour</h2>
+                            <picture>
+                                <!-- 1х: 130px; 2x: 260px -->
+                                <source type="image/webp" media="(max-width: 767px)" srcset="img/hanz-zimmer-mob.webp">
+                                <!-- 1х: 324px; 2x: 648px -->
+                                <source media="(max-width: 1023px)" srcset="img/hanz-zimmer-tab.webp">
+                                <!-- 1х: 270px; 2x: 540px -->
+                                <img src="img/hanz-zimmer-dt.jpeg" width="350" height="450" alt="Ханс Циммер: Live on Tour">
+                            </picture>
+                            <span class="choice__year">2017</span>
+                            <span class="choice__country">Великобритания</span>
+                            <span class="choice__genre">концерт, музыка, документальный</span>
+                            <p class="choice__description">Известный кинокомпозитор Ханс Циммер и его первоклассные
+                                музыканты исполнили перед многотысячной публикой знаменитую музыку из голливудских
+                                блокбастеров.</p>
+                        </div>
+                    </li>
+                    <li class="choice choice--invisible">
+                        <div class="choice__slide">
+                            <h2>Человек</h2>
+                            <picture>
+                                <!-- 1х: 130px; 2x: 260px -->
+                                <source type="image/webp" media="(max-width: 767px)" srcset="img/chelovek-mob.webp">
+                                <!-- 1х: 324px; 2x: 648px -->
+                                <source media="(max-width: 1023px)" srcset="img/chelovek-tab.webp">
+                                <!-- 1х: 270px; 2x: 540px -->
+                                <img src="img/chelovek-dt.jpeg" width="350" height="450" alt="Человек">
+                            </picture>
+                            <span class="choice__year">2015</span>
+                            <span class="choice__country">Франция</span>
+                            <span class="choice__genre">документальный</span>
+                            <p class="choice__description">Огромное кинополотно, собравшее рассказы 2 тысяч людей из 60
+                                стран мира, возможно, не ответит на вопрос «Что делает нас людьми?», но является
+                                отправной точкой для диалога на эту тему.</p>
+                        </div>
+                        <div class="choice__slide">
+                            <h2>Волшебство Queen в Будапеште</h2>
+                            <picture>
+                                <!-- 1х: 130px; 2x: 260px -->
+                                <source type="image/webp" media="(max-width: 767px)" srcset="img/queen-mob.webp">
+                                <!-- 1х: 324px; 2x: 648px -->
+                                <source media="(max-width: 1023px)" srcset="img/queen-tab.webp">
+                                <!-- 1х: 270px; 2x: 540px -->
+                                <img src="img/queen-dt.jpeg" width="350" height="450" alt="Волшебство Queen в Будапеште">
+                            </picture>
+                            <span class="choice__year">1987</span>
+                            <span class="choice__country">Венгрия, Канада, США</span>
+                            <span class="choice__genre">концерт, музыка, документальный</span>
+                            <p class="choice__description">27 июля 1986 года. Будапешт. Уже сумерки. Nepstadion - самый
+                                большой стадион Венгрии. За считанные мгновения трибуны и само поле стадиона заполняются
+                                десятками зрителей, а потом наступит вечер - и на помосте появится Джон Дикон, Брайен
+                                Мэй, Роджер Тейлор и Фредди Меркьюри.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="main__catalog-pages">
+                <button class="main__catalog-pages-item main__catalog-pages-item--previous main__catalog-pages-item--inactive" type="button" title="Предыдущая страница"></button>
+                <button class="main__catalog-pages-item main__catalog-pages-item--next" type="button" title="Следующая страница"></button>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer__copyright">
+            <h3>Сделано<a href="https://hh.ru/resume/0de59b06ff03e106890039ed1f696752775a64"> Ириной Нураевой </a> для
+                Platrum</h3>
+            <span>27.04.2022</span>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

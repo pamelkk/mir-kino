@@ -1,0 +1,110 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    font-family: $font-paragraph;
+    padding-right: 100px;
+    padding-left: 100px;
+    box-sizing: border-box;
+    max-width: 1440px;
+
+    h1 {
+        font-family: $font-header;
+        font-size: 50px;
+        align-self: flex-start;
+    }
+}
+
+.main__reset {
+    border: none;
+    background-color: transparent;
+    width: 140px;
+    padding: 0;
+    font-size: 20px;
+    font-family: $font-main;
+    cursor: pointer;
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: -20px;
+        background-image: url("../img/icon-cross.svg");
+        background-repeat: no-repeat;
+        background-size: 15px 15px;
+        width: 15px;
+        height: 15px;
+        opacity: 0;
+        transition: opacity $trans--300;
+    }
+
+    @media (hover: hover), screen and (min-width: 0\0) {
+        &:hover,
+        &:focus {
+            &::before {
+                color: $main-hover-buttons;
+                opacity: 0.9;
+            }
+        }
+    }
+}
+
+.main__catalog {
+    display: flex;
+    flex-direction: column;
+}
+
+.main__catalog-category {
+    display: none;
+    overflow: hidden;
+    max-width: 750px;
+    align-self: center;
+
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+    }
+
+    &--visible {
+        display: flex;
+    }
+}
+
+.main__catalog-pages {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    align-self: center;
+}
+
+.main__catalog-pages-item {
+    border: none;
+    background-color: transparent;
+    background-image: url("../../img/icon-arrow.svg");
+    background-size: 24px 11px;
+    width: 40px;
+    height: 11px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: width $trans--300;
+    padding: 0;
+    margin: 0;
+
+    @media (hover: hover), screen and (min-width: 0\0) {
+        &:hover,
+        &:focus {
+            background-size: 45px 11px;
+        }
+    }
+
+    &--previous {
+        transform: rotate(180deg);
+        margin-right: 20px;
+    }
+}
+
+.main__catalog-pages-item--inactive {
+    pointer-events: none;
+    opacity: 0.5;
+}

@@ -1,0 +1,37 @@
+.choice {
+    display: none;
+}
+
+.choice--visible {
+    display: flex;
+}
+
+.choice__slide {
+    display: flex;
+    flex-direction: column;
+    max-width: 350px;
+
+    h2 {
+        font-family: $font-header;
+        font-size: 40px;
+        text-align: center;
+        min-height: 80px;
+        align-self: center;
+    }
+
+    span {
+        font-family: $font-main;
+        font-size: 20px;
+        text-align: left;
+    }
+
+    p {
+        font-family: $font-main;
+        font-size: 20px;
+        text-align: left;
+    }
+
+    &:nth-of-type(2n) {
+        margin-left: 50px;
+    }
+}

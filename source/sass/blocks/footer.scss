@@ -1,0 +1,35 @@
+.footer {
+    display: flex;
+    flex-direction: column;
+    font-family: $font-paragraph;
+    padding-right: 100px;
+    padding-left: 100px;
+    box-sizing: border-box;
+    max-width: 1440px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.footer__copyright {
+    display: flex;
+    align-self: flex-end;
+
+    span {
+        font-family: $font-main;
+        font-size: 20px;
+        margin-left: 20px;
+        color: $main-black;
+    }
+
+    h3 {
+        font-family: $font-main;
+        margin: 0;
+        font-size: 20px;
+        color: $main-black;
+
+        a {
+            text-decoration: none;
+            color: $main-hover-buttons;
+        }
+    }
+}
