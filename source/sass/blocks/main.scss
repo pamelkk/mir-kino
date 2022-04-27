@@ -57,8 +57,10 @@
 .main__catalog-category {
     display: none;
     overflow: hidden;
+    flex-direction: column;
     max-width: 750px;
     align-self: center;
+    position: relative;
 
     ul {
         margin: 0;
@@ -72,39 +74,63 @@
     }
 }
 
-.main__catalog-pages {
+.main__catalog-category-pages {
     margin-top: 50px;
     margin-bottom: 50px;
     align-self: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
 }
 
-.main__catalog-pages-item {
-    border: none;
+.pages {
     background-color: transparent;
-    background-image: url("../../img/icon-arrow.svg");
-    background-size: 24px 11px;
-    width: 40px;
-    height: 11px;
-    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border-color: $main-active-buttons;
     cursor: pointer;
-    transition: width $trans--300;
+    transition: opacity $trans--300;
+    transition: background-color $trans--300;
+    opacity: 0.9;
     padding: 0;
     margin: 0;
+    position: absolute;
 
     @media (hover: hover), screen and (min-width: 0\0) {
         &:hover,
         &:focus {
-            background-size: 45px 11px;
+            background-color: $main-hover-buttons;
         }
     }
 
-    &--previous {
-        transform: rotate(180deg);
-        margin-right: 20px;
+    &--inactive {
+        pointer-events: none;
+        background-color: $main-active-buttons; 
+        opacity: 0.5;
     }
 }
 
-.main__catalog-pages-item--inactive {
-    pointer-events: none;
-    opacity: 0.5;
+#leftControl {
+    bottom: -50px;
+    left: 340px;
 }
+
+#rightControl {
+    bottom: -50px;
+    right: -410px;
+}
+
+#slideshow #slidesContainer {
+    width: 770px;
+    height: 920px;
+    overflow: auto; /* разрешаем прокрутку */
+    position: relative;
+}
+
+#slideshow #slidesContainer .slide {
+  width: 750px;
+  height: 920px;
+}
+
+    

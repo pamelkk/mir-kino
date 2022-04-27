@@ -7,21 +7,6 @@ let comedyButton = document.querySelector(".header__nav-button--comedy");
 let actionButton = document.querySelector(".header__nav-button--action");
 let documentaryButton = document.querySelector(".header__nav-button--documentary");
 let resetButton = document.querySelector(".main__reset");
-let previousButton = document.querySelectorAll(".main__catalog-pages-item--previous");
-let nextButton = document.querySelectorAll(".main__catalog-pages-item--next");
-let slideInactive = document.querySelector(".choice");
-
-
-
-function bebe (array) {
-    array.forEach((element) => {
-        numCallbackRuns++
-    })
-}
-
-nextButton.addEventListener('click', function () {
-    resetFilterExcept(horrorButton, horrorWrapper);
-})
 
 function resetFilterExcept(notResetButton, notResetWrapper) {
     horrorWrapper.classList.remove('main__catalog-category--visible');

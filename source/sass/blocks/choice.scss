@@ -1,8 +1,4 @@
 .choice {
-    display: none;
-}
-
-.choice--visible {
     display: flex;
 }
 
@@ -34,4 +30,8 @@
     &:nth-of-type(2n) {
         margin-left: 50px;
     }
+}
+
+.choice__year {
+    margin-top: 15px;
 }
