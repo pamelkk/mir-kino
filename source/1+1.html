@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Мир Кино" />
+    <title>Мир Кино</title>
+    <link href="css/min.css" rel="stylesheet" />
+    <link rel="preload" href="fonts/OpenSans-Light.woff" as="font" type="font/woff" crossorigin>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__logo">
+            <a title="Логотип нашей компании" href="index.html">
+                <img src="img/icon-logo.svg" width="150" height="100" alt="Логотип нашей компании">
+            </a>
+        </div>
+    </header>
+    <main class="main">
+        <section class="choice">
+            <h2>1+1</h2>
+            <picture>
+                <source type="image/jpeg" media="(max-width: 767px)" srcset="img/1+1-mob.jpeg">
+                <source media="(max-width: 1023px)" srcset="img/1+1-dt.jpeg">
+                <img src="img/1+1-dt.jpeg" width="350" height="450" alt="1+1" />
+            </picture>
+            <span class="choice__year">2011</span>
+            <span class="choice__country">Франция</span>
+            <span class="choice__genre">комедия</span>
+            <p class="choice__description">Пострадав в результате несчастного случая,
+                богатый
+                аристократ
+                Филипп нанимает в помощники человека, который менее всего подходит для этой
+                работы,
+                –
+                молодого жителя предместья Дрисса, только что освободившегося из тюрьмы.</p>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer__copyright">
+            <h3>Сделано<a href="https://hh.ru/resume/0de59b06ff03e106890039ed1f696752775a64"> Ириной Нураевой </a> для
+                Platrum</h3>
+            <span>27.04.2022</span>
+        </div>
+    </footer>
+    <script src="js/jquery.js"></script>
+    <script src="js/vendor.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

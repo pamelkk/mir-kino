@@ -52,21 +52,21 @@
 .main__catalog {
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 .main__catalog-category {
     display: none;
     overflow: hidden;
     flex-direction: column;
-    max-width: 750px;
     align-self: center;
-    position: relative;
 
     ul {
         margin: 0;
         padding: 0;
         list-style: none;
         display: flex;
+        flex-wrap: wrap;
     }
 
     &--visible {
@@ -74,13 +74,10 @@
     }
 }
 
-.main__catalog-category-pages {
+.main__catalog-pages {
     margin-top: 50px;
     margin-bottom: 50px;
     align-self: center;
-    position: absolute;
-    bottom: 0;
-    left: 0;
 }
 
 .pages {
@@ -109,28 +106,65 @@
         background-color: $main-active-buttons; 
         opacity: 0.5;
     }
+
+    &--invisible {
+        display: none;
+    }
 }
 
 #leftControl {
     bottom: -50px;
-    left: 340px;
+    left: 40%;
 }
 
 #rightControl {
     bottom: -50px;
-    right: -410px;
+    right: 40%;
 }
 
 #slideshow #slidesContainer {
-    width: 770px;
-    height: 920px;
-    overflow: auto; /* разрешаем прокрутку */
+    width: 750px;
+    height: auto;
+    overflow: auto;
     position: relative;
+    display: flex;
+}
+
+#slideshow {
+    align-self: center;
 }
 
 #slideshow #slidesContainer .slide {
   width: 750px;
-  height: 920px;
+  height: auto;
 }
 
+@media (max-width: $tablet-width) {
+    .main {
+        padding-right: 19px;
+        padding-left: 19px;
+        max-width: 768px;
     
+        h1 {
+            font-size: 30px;
+        }
+    }
+
+    .main__catalog {
+        margin-top: 40px;
+    }
+
+    #leftControl {
+        bottom: 70px;
+        left: 40%;
+    }
+    
+    #rightControl {
+        bottom: 70px;
+        right: 40%;
+    }
+
+    #slideshow {
+        align-self: stretch;
+    }
+}

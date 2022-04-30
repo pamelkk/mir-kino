@@ -6,7 +6,7 @@
     padding-left: 100px;
     box-sizing: border-box;
     max-width: 1440px;
-    margin-top: 50px;
+    margin-top: 120px;
     margin-bottom: 50px;
 }
 
@@ -31,5 +31,22 @@
             text-decoration: none;
             color: $main-hover-buttons;
         }
+    }
+}
+
+@media (max-width: $tablet-width) {
+    .footer {
+        padding-right: 19px;
+        padding-left: 19px;
+        max-width: 768px;
+        margin-top: 0;
+    }
+}
+
+@media (max-width: $mobile-width) {
+    .footer {
+        padding-right: 5px;
+        padding-left: 5px;
+        max-width: 320px;
     }
 }

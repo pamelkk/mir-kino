@@ -4,8 +4,9 @@
   "description": "Проект Мир Кино",
   "devDependencies": {
     "@htmlacademy/editorconfig-cli": "1.x",
-    "autoprefixer": "^9.8.6",
-    "browser-sync": "^2.26.14",
+    "@typescript-eslint/parser": "^5.21.0",
+    "autoprefixer": "^9.8.8",
+    "browser-sync": "^2.27.9",
     "eslint": "^7.32.0",
     "eslint-config-google": "^0.14.0",
     "eslint-config-htmlacademy": "0.4.x",
@@ -21,6 +22,7 @@
     "gulp-plumber": "^1.2.1",
     "gulp-postcss": "^8.0.0",
     "gulp-posthtml": "^3.0.5",
+    "gulp-pug": "^4.0.1",
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.1.1",
     "gulp-sourcemaps": "^2.6.5",
@@ -30,7 +32,8 @@
     "posthtml-include": "^1.6.2",
     "stylelint": "^9.10.1",
     "stylelint-config-htmlacademy": "0.1.x",
-    "stylelint-config-standard": "^20.0.0"
+    "stylelint-config-standard": "^20.0.0",
+    "typescript": "^4.6.4"
   },
   "scripts": {
     "editorconfig": "editorconfig-cli",
@@ -50,6 +53,7 @@
     "*.json",
     "*.js",
     "source/*.html",
+    "source/**/*.pug",
     "source/js/**/*.js",
     "source/img/**/*.svg",
     "source/sass/**/*.{sass,scss}"
@@ -60,11 +64,15 @@
   "dependencies": {
     "csso": "^4.2.0",
     "del": "^4.1.1",
+    "gulp-cached": "^1.1.1",
+    "gulp-group-css-media-queries": "^1.2.2",
     "gulp-jsmin": "^0.1.5",
     "plumber": "^0.4.8",
     "postcss": "^8.3.6",
+    "pug": "^3.0.2",
     "rename": "^1.0.4",
     "sass": "^1.37.0",
-    "sourcemap": "^0.1.0"
+    "sourcemap": "^0.1.0",
+    "webpack-stream": "^7.0.0"
   }
 }
