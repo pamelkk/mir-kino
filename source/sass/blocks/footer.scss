@@ -14,7 +14,7 @@
     display: flex;
     align-self: flex-end;
 
-    span {
+    span:not(.footer__copyright-smile) {
         font-family: $font-main;
         font-size: 20px;
         margin-left: 20px;
@@ -31,6 +31,14 @@
             text-decoration: none;
             color: $main-hover-buttons;
         }
+    }
+}
+
+.footer__copyright-smile {
+    display: none;
+
+    &--visible {
+        display: inline-block;
     }
 }
 

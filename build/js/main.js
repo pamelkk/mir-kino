@@ -23,14 +23,13 @@ let filterList = document.querySelector('.header__nav-filters');
 let genreListFilter = filterList.querySelector('.header__nav-filters-item--genre');
 let yearListFilter = filterList.querySelector('.header__nav-filters-item--year');
 let countryListFilter = filterList.querySelector('.header__nav-filters-item--country');
-
 let genreButtonFilter = filterList.querySelector('.header__nav-filters-button--genre');
 let yearButtonFilter = filterList.querySelector('.header__nav-filters-button--year');
 let countryButtonFilter = filterList.querySelector('.header__nav-filters-button--country');
-
-
 let buttonsFilters = filterList.querySelectorAll('button');
 let filtersValue = filterList.querySelectorAll('.header__nav-filters-item');
+let smile = document.querySelector('.footer__copyright-smile');
+let beta = "is_beta=1";
 
 
 function getUniqueResult(elements) {
@@ -173,20 +172,22 @@ document.addEventListener('keydown', function (e) {
     }
 })
 
-function openFilter(itemFilter) {
+function openFilter(itemFilter, firstNotThatFilter, secondNotThatFilter) {
     itemFilter.classList.add('header__nav-filters-item--visible');
+    firstNotThatFilter.classList.remove('header__nav-filters-item--visible');
+    secondNotThatFilter.classList.remove('header__nav-filters-item--visible');
 }
 
 genreButtonFilter.addEventListener('click', function () {
-    openFilter(genreListFilter);
+    openFilter(genreListFilter, yearListFilter, countryListFilter);
 })
 
 yearButtonFilter.addEventListener('click', function () {
-    openFilter(yearListFilter);
+    openFilter(yearListFilter, genreListFilter, countryListFilter);
 })
 
 countryButtonFilter.addEventListener('click', function () {
-    openFilter(countryListFilter);
+    openFilter(countryListFilter, genreListFilter, yearListFilter);
 })
 
 window.addEventListener('click', function (e) {
@@ -196,3 +197,9 @@ window.addEventListener('click', function (e) {
         }
     })
 })
+
+if(beta) {
+    smile.classList.add('footer__copyright-smile--visible');
+} else {
+    smile.classList.remove('footer__copyright-smile--visible');
+}
