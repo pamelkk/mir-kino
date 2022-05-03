@@ -1,11 +1,7 @@
 .choice {
-    display: none;
+    display: flex;
     flex-direction: column;
     max-width: 350px;
-
-    &--visible {
-      display: flex;
-    }
 
     &:nth-of-type(2n) {
         margin-left: 50px;

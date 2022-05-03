@@ -45,7 +45,7 @@ function getUniqueResult(elements) {
       }
     }
     return result;
-  }
+}
 
 function getFiltersItems(items) {
     const resultFiltersList = [];
@@ -182,6 +182,12 @@ function openFilter(itemFilter, firstNotThatFilter, secondNotThatFilter) {
     secondNotThatFilter.classList.remove('header__nav-filters-item--visible');
 }
 
+function closeFilters(firstNotThatFilter, secondNotThatFilter, thirdNotThatFilter) {
+    firstNotThatFilter.classList.remove('header__nav-filters-item--visible');
+    secondNotThatFilter.classList.remove('header__nav-filters-item--visible');
+    thirdNotThatFilter.classList.remove('header__nav-filters-item--visible');
+}
+
 genreButtonFilter.addEventListener('click', function () {
     openFilter(genreList, yearList, countryList);
 })
@@ -194,8 +200,18 @@ countryButtonFilter.addEventListener('click', function () {
     openFilter(countryList, genreList, yearList);
 })
 
-if(beta = "1") {
+if(beta == "1") {
     smile.classList.add('footer__copyright-smile--visible');
 } else {
     smile.classList.remove('footer__copyright-smile--visible');
 }
+
+window.addEventListener('click', function (e) {
+    if ('.header__nav-filters-item--visible') {
+        for (const item of filtersValue) {
+            if (e.target === item) {
+                item.classList.remove('header__nav-filters-item--visible');
+            }
+        }
+    }
+})
