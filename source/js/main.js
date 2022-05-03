@@ -16,20 +16,24 @@ let buttonMenuClose = document.querySelector(".header__nav-tab--close");
 let buttonMenuOpen = document.querySelector(".header__nav-tab--open");
 const ESC_KEYCODE = 27
 let textCategoryReset = resetButton.textContent;
+let choice = document.querySelectorAll('.choice');
 let genre = document.querySelectorAll('.choice__genre');
 let year = document.querySelectorAll('.choice__year');
 let country = document.querySelectorAll('.choice__country');
 let filterList = document.querySelector('.header__nav-filters');
-let genreListFilter = filterList.querySelector('.header__nav-filters-item--genre');
-let yearListFilter = filterList.querySelector('.header__nav-filters-item--year');
-let countryListFilter = filterList.querySelector('.header__nav-filters-item--country');
+let genreList = filterList.querySelector('.header__nav-filters-item--genre');
+let yearList = filterList.querySelector('.header__nav-filters-item--year');
+let countryList = filterList.querySelector('.header__nav-filters-item--country');
+let genreListFilter = genreList.querySelector('ul');
+let yearListFilter = yearList.querySelector('ul');
+let countryListFilter = countryList.querySelector('ul');
 let genreButtonFilter = filterList.querySelector('.header__nav-filters-button--genre');
 let yearButtonFilter = filterList.querySelector('.header__nav-filters-button--year');
 let countryButtonFilter = filterList.querySelector('.header__nav-filters-button--country');
 let buttonsFilters = filterList.querySelectorAll('button');
 let filtersValue = filterList.querySelectorAll('.header__nav-filters-item');
 let smile = document.querySelector('.footer__copyright-smile');
-let beta = "is_beta=1";
+let beta = "is_beta";
 
 
 function getUniqueResult(elements) {
@@ -179,26 +183,18 @@ function openFilter(itemFilter, firstNotThatFilter, secondNotThatFilter) {
 }
 
 genreButtonFilter.addEventListener('click', function () {
-    openFilter(genreListFilter, yearListFilter, countryListFilter);
+    openFilter(genreList, yearList, countryList);
 })
 
 yearButtonFilter.addEventListener('click', function () {
-    openFilter(yearListFilter, genreListFilter, countryListFilter);
+    openFilter(yearList, genreList, countryList);
 })
 
 countryButtonFilter.addEventListener('click', function () {
-    openFilter(countryListFilter, genreListFilter, yearListFilter);
+    openFilter(countryList, genreList, yearList);
 })
 
-window.addEventListener('click', function (e) {
-    filtersValue.forEach((element) => {
-        if (e.target === filterList) {
-            element.classList.remove('header__nav-filters-item--visible');
-        }
-    })
-})
-
-if(beta) {
+if(beta = "1") {
     smile.classList.add('footer__copyright-smile--visible');
 } else {
     smile.classList.remove('footer__copyright-smile--visible');
