@@ -1,7 +1,3 @@
-let horrorWrapper = document.querySelector(".main__catalog-category--horror");
-let comedyWrapper = document.querySelector(".main__catalog-category--comedy");
-let actionWrapper = document.querySelector(".main__catalog-category--action");
-let documentaryWrapper = document.querySelector(".main__catalog-category--documentary");
 let horrorButton = document.querySelector(".header__nav-button--horror");
 let comedyButton = document.querySelector(".header__nav-button--comedy");
 let actionButton = document.querySelector(".header__nav-button--action");
@@ -34,10 +30,16 @@ let filtersValue = filterList.querySelectorAll('.header__nav-filters-item');
 let smile = document.querySelector('.footer__copyright-smile');
 let beta = "is_beta";
 let choice = document.querySelectorAll('.choice');
-let yearsChoice = document.querySelectorAll('.choice__year');
+localStorage.setItem('classChangeWrapper', 'main__catalog-category--visible');
+localStorage.setItem('classChangeButton', 'header__nav-button--selected');
 let wrapper = localStorage.getItem('classChangeWrapper');
-let button = localStorage.getItem('classChangeButton'); 
+let button = localStorage.getItem('classChangeButton');
 
+
+const array = [];
+choice.forEach((elementChoice) => {
+    array.push(elementChoice);
+});
 
 
 window.addEventListener('click', function (e) {
@@ -48,14 +50,12 @@ window.addEventListener('click', function (e) {
     }
 })
 
-
 function getUniqueResult(elements) {
     let result = [];
-  
     for (let element of elements) {
-      if (!result.includes(element)) {
-        result.push(element);
-      }
+        if (!result.includes(element)) {
+            result.push(element);
+        }
     }
     return result;
 }
@@ -71,25 +71,78 @@ function getFiltersItems(items) {
 
 function getFilterGenre(items) {
     for (const item of items) {
-      const filterElement = document.createElement(`li`);
-      filterElement.textContent = item;
-      genreListFilter.appendChild(filterElement)
+        const filterElement = document.createElement(`li`);
+        filterElement.textContent = item;
+        genreListFilter.appendChild(filterElement)
+
+        filterElement.addEventListener('click', function () {
+            for (let element of array) {
+                element.classList.add('choice--invisible');
+                let elementChoiceCountry = element.querySelector('.choice__genre');
+                if (elementChoiceCountry.textContent == filterElement.textContent) {
+                    element.classList.add('choice--visible');
+                    element.classList.remove('choice--invisible');
+                    let elementWithClass = document.querySelector('.choice--visible');
+                    console.log(elementWithClass)
+                }
+            }
+        })
     }
 };
 
 function getFilterYear(items) {
     for (const item of items) {
-      const filterElement = document.createElement(`li`);
-      filterElement.textContent = item;
-      yearListFilter.appendChild(filterElement)
+        const filterElement = document.createElement(`li`);
+        filterElement.textContent = item;
+        yearListFilter.appendChild(filterElement)
+
+        filterElement.addEventListener('click', function () {
+            for (let element of array) {
+                element.classList.add('choice--invisible');
+                let elementChoiceCountry = element.querySelector('.choice__year');
+                if (elementChoiceCountry.textContent == filterElement.textContent) {
+                    element.classList.add('choice--visible');
+                    element.classList.remove('choice--invisible');
+                    let elementWithClass = document.querySelector('.choice--visible');
+                    console.log(elementWithClass)
+                }
+            }
+        })
     }
 };
 
 function getFilterCountry(items) {
     for (const item of items) {
-      const filterElement = document.createElement(`li`);
-      filterElement.textContent = item;
-      countryListFilter.appendChild(filterElement)
+        const filterElement = document.createElement(`li`);
+        filterElement.textContent = item;
+        countryListFilter.appendChild(filterElement)
+
+        /*filterElement.addEventListener('click', function () {
+            for (let element of array) {
+                element.classList.remove('choice--visible');
+                element.classList.add('choice--invisible');
+                let elementChoiceCountry = element.querySelector('.choice__country');
+                if (elementChoiceCountry.textContent == filterElement.textContent) {
+                    element.classList.add('choice--visible');
+                    element.classList.remove('choice--invisible');
+                    let elementsWithClass = document.querySelectorAll('.choice--visible');
+                    
+                    const newArray = [];
+                    elementsWithClass.forEach((elementNewArray) => {
+                        newArray.push(elementNewArray);
+                    });
+
+                    for (let el of newArray) {
+                        if (el.parentElement == slideSecond) {
+                            console.log("Во втором")
+                        } 
+                        if (el.parentElement == slideFirst) {
+                            console.log("В первом")
+                        }
+                    }
+                }
+            }
+        })*/
     }
 };
 
@@ -110,7 +163,7 @@ let resultCountryElements = getFilterCountry(resultUniqueCountry);
 
 function resetFilterExcept(notResetButton, notResetWrapper) {
     horrorWrapper.classList.remove('main__catalog-category--visible');
-    horrorButton.classList.remove('header__nav-button--selected');  
+    horrorButton.classList.remove('header__nav-button--selected');
     comedyWrapper.classList.remove('main__catalog-category--visible');
     comedyButton.classList.remove('header__nav-button--selected');
     actionWrapper.classList.remove('main__catalog-category--visible');
@@ -121,19 +174,12 @@ function resetFilterExcept(notResetButton, notResetWrapper) {
     menu.classList.remove('header__nav--opened');
     resetButton.textContent = notResetButton.textContent;
     notResetWrapper.classList.add(wrapper);
-    notResetButton.classList.add(button);  
-}
-
-function choiceFilter(choices, thatChoice) {
-    for (const choice of choices) {
-        choice.classList.remove('choice--invisible');
-        thatChoice.classList.add('choice--invisible');
-    }
+    notResetButton.classList.add(button);
 }
 
 function resetAllFilters() {
     horrorWrapper.classList.add('main__catalog-category--visible');
-    horrorButton.classList.remove('header__nav-button--selected');  
+    horrorButton.classList.remove('header__nav-button--selected');
     comedyWrapper.classList.add('main__catalog-category--visible');
     comedyButton.classList.remove('header__nav-button--selected');
     actionWrapper.classList.add('main__catalog-category--visible');
@@ -148,8 +194,6 @@ horrorButton.addEventListener('click', function () {
     slideSecond.style.display = "none";
     slideFirst.style.display = "block";
     slidesContainer.style.marginLeft = "0";
-    localStorage.setItem('classChangeWrapper', 'main__catalog-category--visible'); 
-    localStorage.setItem('classChangeButton', 'header__nav-button--selected'); 
 })
 
 comedyButton.addEventListener('click', function () {
@@ -157,16 +201,12 @@ comedyButton.addEventListener('click', function () {
     slideSecond.style.display = "none";
     slideFirst.style.display = "block";
     slidesContainer.style.marginLeft = "0";
-    localStorage.setItem('classChangeWrapper', 'main__catalog-category--visible'); 
-    localStorage.setItem('classChangeButton', 'header__nav-button--selected'); 
 })
 
 actionButton.addEventListener('click', function () {
     resetFilterExcept(actionButton, actionWrapper);
     slideFirst.style.display = "none";
     slideSecond.style.display = "block";
-    localStorage.setItem('classChangeWrapper', 'main__catalog-category--visible'); 
-    localStorage.setItem('classChangeButton', 'header__nav-button--selected'); 
 })
 
 documentaryButton.addEventListener('click', function () {
@@ -198,7 +238,7 @@ window.addEventListener('click', function (e) {
 
 document.addEventListener('keydown', function (e) {
     if (e.keyCode === ESC_KEYCODE && menu.classList.contains('header__nav--opened')) {
-      menu.classList.remove('header__nav--opened');
+        menu.classList.remove('header__nav--opened');
     }
 })
 
@@ -226,7 +266,7 @@ countryButtonFilter.addEventListener('click', function () {
     openFilter(countryList, genreList, yearList);
 })
 
-if(beta == "1") {
+if (beta == "1") {
     smile.classList.add('footer__copyright-smile--visible');
 } else {
     smile.classList.remove('footer__copyright-smile--visible');
