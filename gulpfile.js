@@ -63,7 +63,7 @@ gulp.task('images', function () {
 gulp.task('js', function () {
   return gulp.src('source/js/*.js')
     .pipe(jsmin())
-    .pipe(rename('min-vendor.js'))
+    .pipe(rename('min-main.js'))
     .pipe(gulp.dest('build/js'))
     .pipe(sync.stream())
 })
