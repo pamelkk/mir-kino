@@ -16,7 +16,6 @@ let buttonMenuClose = document.querySelector(".header__nav-tab--close");
 let buttonMenuOpen = document.querySelector(".header__nav-tab--open");
 const ESC_KEYCODE = 27
 let textCategoryReset = resetButton.textContent;
-let choice = document.querySelectorAll('.choice');
 let genre = document.querySelectorAll('.choice__genre');
 let year = document.querySelectorAll('.choice__year');
 let country = document.querySelectorAll('.choice__country');
@@ -34,6 +33,19 @@ let buttonsFilters = filterList.querySelectorAll('button');
 let filtersValue = filterList.querySelectorAll('.header__nav-filters-item');
 let smile = document.querySelector('.footer__copyright-smile');
 let beta = "is_beta";
+let choice = document.querySelectorAll('.choice');
+let yearsChoice = document.querySelectorAll('.choice__year');
+let wrapper = localStorage.getItem('classChangeWrapper');
+let button = localStorage.getItem('classChangeButton'); 
+
+
+window.addEventListener('click', function (e) {
+    for (const item of filtersValue) {
+        if (e.target === item && item.classList.contains('header__nav-filters-item--visible')) {
+            closeFilters(yearList, genreList, countryList);
+        }
+    }
+})
 
 
 function getUniqueResult(elements) {
@@ -104,11 +116,18 @@ function resetFilterExcept(notResetButton, notResetWrapper) {
     actionButton.classList.remove('header__nav-button--selected');
     documentaryWrapper.classList.remove('main__catalog-category--visible');
     documentaryButton.classList.remove('header__nav-button--selected');
-    notResetWrapper.classList.add('main__catalog-category--visible');
-    notResetButton.classList.add('header__nav-button--selected');
     pagesButtons.classList.add('pages--invisible');
     menu.classList.remove('header__nav--opened');
     resetButton.textContent = notResetButton.textContent;
+    notResetWrapper.classList.add(wrapper);
+    notResetButton.classList.add(button);  
+}
+
+function choiceFilter(choices, thatChoice) {
+    for (const choice of choices) {
+        choice.classList.remove('choice--invisible');
+        thatChoice.classList.add('choice--invisible');
+    }
 }
 
 function resetAllFilters() {
@@ -128,6 +147,8 @@ horrorButton.addEventListener('click', function () {
     slideSecond.style.display = "none";
     slideFirst.style.display = "block";
     slidesContainer.style.marginLeft = "0";
+    localStorage.setItem('classChangeWrapper', 'main__catalog-category--visible'); 
+    localStorage.setItem('classChangeButton', 'header__nav-button--selected'); 
 })
 
 comedyButton.addEventListener('click', function () {
@@ -135,12 +156,16 @@ comedyButton.addEventListener('click', function () {
     slideSecond.style.display = "none";
     slideFirst.style.display = "block";
     slidesContainer.style.marginLeft = "0";
+    localStorage.setItem('classChangeWrapper', 'main__catalog-category--visible'); 
+    localStorage.setItem('classChangeButton', 'header__nav-button--selected'); 
 })
 
 actionButton.addEventListener('click', function () {
     resetFilterExcept(actionButton, actionWrapper);
     slideFirst.style.display = "none";
     slideSecond.style.display = "block";
+    localStorage.setItem('classChangeWrapper', 'main__catalog-category--visible'); 
+    localStorage.setItem('classChangeButton', 'header__nav-button--selected'); 
 })
 
 documentaryButton.addEventListener('click', function () {
@@ -171,7 +196,7 @@ window.addEventListener('click', function (e) {
 })
 
 document.addEventListener('keydown', function (e) {
-    if (e.keyCode === ESC_KEYCODE & menu.classList.contains('header__nav--opened')) {
+    if (e.keyCode === ESC_KEYCODE && menu.classList.contains('header__nav--opened')) {
       menu.classList.remove('header__nav--opened');
     }
 })
@@ -205,13 +230,3 @@ if(beta == "1") {
 } else {
     smile.classList.remove('footer__copyright-smile--visible');
 }
-
-window.addEventListener('click', function (e) {
-    if ('.header__nav-filters-item--visible') {
-        for (const item of filtersValue) {
-            if (e.target === item) {
-                item.classList.remove('header__nav-filters-item--visible');
-            }
-        }
-    }
-})
