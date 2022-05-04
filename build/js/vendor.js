@@ -7,7 +7,6 @@ $(document).ready(function () {
   let marginMax = 750;
   let marginMaxMob = 266;
   const marginMin = 0;
-  console.log($(window).width())
 
   $('#slideshow').css('overflow', 'hidden');
   $('#slideshow').css({

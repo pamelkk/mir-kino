@@ -39,6 +39,7 @@ let wrapper = localStorage.getItem('classChangeWrapper');
 let button = localStorage.getItem('classChangeButton'); 
 
 
+
 window.addEventListener('click', function (e) {
     for (const item of filtersValue) {
         if (e.target === item && item.classList.contains('header__nav-filters-item--visible')) {
